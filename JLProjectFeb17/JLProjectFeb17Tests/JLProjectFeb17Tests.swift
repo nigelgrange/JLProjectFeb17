@@ -21,16 +21,18 @@ class JLProjectFeb17Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testConstuctProductOverviewFromCorrectDictionary() {
+        let correctDictionary : Dictionary<String,Any> = ["productId" : "001", "price" : ["now":"123.45"], "title":"Title", "image":"http://test.image"]
+        
+        let overview = ProductOverview(values: correctDictionary)
+        assert(overview?.productId == "001", "Invalid Product ID")
+        assert(overview?.priceNow == "123.45", "Invalid Price")
+        assert(overview?.title == "Title", "Invalid Title")
+        assert(overview?.imageUrl == "http://test.image", "Invalid Image URL")
+
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+
     
 }
