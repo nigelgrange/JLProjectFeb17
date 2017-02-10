@@ -33,6 +33,28 @@ class JLProjectFeb17Tests: XCTestCase {
 
     }
     
+    func testConstructProductOverviewFromInvaldiDictionary() {
+        var invalidDictionary : Dictionary<String,Any> = [:]
+        assert(ProductOverview(values:invalidDictionary) == nil, "Invalid overview object")
+        
+        invalidDictionary = ["productId" : "001"]
+        assert(ProductOverview(values:invalidDictionary) == nil, "Invalid overview object")
+        
+        invalidDictionary = ["productId" : "001", "title":"Title"]
+        assert(ProductOverview(values:invalidDictionary) == nil, "Invalid overview object")
+        
+        invalidDictionary = ["productId" : "001", "title":"Title", "image":"http://test.image"]
+        assert(ProductOverview(values:invalidDictionary) == nil, "Invalid overview object")
+        
+        
+        invalidDictionary = ["productId" : "001", "title":"Title", "image":"http://test.image","price" : ["was":"123.45"]]
+        assert(ProductOverview(values:invalidDictionary) == nil, "Invalid overview object")
+        
+        invalidDictionary = ["productId" : "001", "title":"Title", "image":"http://test.image","price" : "123.45"]
+        assert(ProductOverview(values:invalidDictionary) == nil, "Invalid overview object")
+    }
+    
+    
 
     
 }

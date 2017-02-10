@@ -15,11 +15,11 @@ class ProductOverview: NSObject {
     var imageUrl : String
     
     init?(values : Dictionary<String, Any>) {
-        let productId = values["productId"] as! String?
-        let priceDict  = values["price"] as! Dictionary<String, Any>?
-        let priceNowString = priceDict != nil ? priceDict?["now"] as! String? : nil
-        let title = values["title"] as! String?
-        let imageUrl = values["image"] as! String?
+        let productId = values["productId"] as? String
+        let priceDict  =  values["price"] as? Dictionary<String, Any>
+        let priceNowString = priceDict != nil ? priceDict?["now"] as? String : nil
+        let title = values["title"] as? String
+        let imageUrl = values["image"] as? String
     
         if (productId != nil &&
             priceNowString != nil &&
