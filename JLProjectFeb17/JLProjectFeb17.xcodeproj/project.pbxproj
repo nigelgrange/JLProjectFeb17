@@ -22,6 +22,7 @@
 		A6C9F3881E5344A200A067C8 /* testProductsInvalid3.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F3871E5344A200A067C8 /* testProductsInvalid3.json */; };
 		A6C9F38C1E53497E00A067C8 /* ProductOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9F38A1E53497E00A067C8 /* ProductOverviewCollectionViewCell.swift */; };
 		A6C9F38D1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F38B1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib */; };
+		A6C9F38E1E534C2400A067C8 /* testProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F2CD1E4DE05800A067C8 /* testProducts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6C9F2A91E4DDCB600A067C8 /* LaunchScreen.storyboard in Resources */,
+				A6C9F38E1E534C2400A067C8 /* testProducts.json in Resources */,
 				A6C9F38D1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib in Resources */,
 				A6C9F2A61E4DDCB600A067C8 /* Assets.xcassets in Resources */,
 				A6C9F2A41E4DDCB600A067C8 /* Main.storyboard in Resources */,

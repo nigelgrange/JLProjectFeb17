@@ -10,9 +10,16 @@ import UIKit
 
 class ProductOverviewCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configureWithProductOverview(product : ProductOverview) {
+        descriptionLabel.text = product.title
     }
 
 }
