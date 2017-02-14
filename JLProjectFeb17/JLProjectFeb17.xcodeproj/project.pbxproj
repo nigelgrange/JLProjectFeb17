@@ -27,6 +27,8 @@
 		A6C9F38E1E534C2400A067C8 /* testProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F2CD1E4DE05800A067C8 /* testProducts.json */; };
 		A6C9F3901E53525900A067C8 /* testProductDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F38F1E53525900A067C8 /* testProductDetail.json */; };
 		A6C9F3921E53527800A067C8 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9F3911E53527800A067C8 /* ProductDetail.swift */; };
+		A6C9F3941E53627C00A067C8 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9F3931E53627C00A067C8 /* ProductDetailViewController.swift */; };
+		A6C9F3951E53653100A067C8 /* testProductDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F38F1E53525900A067C8 /* testProductDetail.json */; };
 		CA5A07774CB08302F2865178 /* Pods_JLProjectFeb17.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB9CDA3162BA79EF73E79C /* Pods_JLProjectFeb17.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,7 @@
 		A6C9F38B1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		A6C9F38F1E53525900A067C8 /* testProductDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testProductDetail.json; sourceTree = "<group>"; };
 		A6C9F3911E53527800A067C8 /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		A6C9F3931E53627C00A067C8 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A75C26972BDAA790DDC89A87 /* Pods-JLProjectFeb17UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17UITests/Pods-JLProjectFeb17UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B320BB260EB99DFFB7A20204 /* Pods-JLProjectFeb17Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17Tests/Pods-JLProjectFeb17Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C912327055A4A49FA8DC4E68 /* Pods-JLProjectFeb17UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17UITests/Pods-JLProjectFeb17UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				A6C9F29E1E4DDCB600A067C8 /* AppDelegate.swift */,
-				A6C9F2A01E4DDCB600A067C8 /* ViewController.swift */,
 				A6C9F2A21E4DDCB600A067C8 /* Main.storyboard */,
 				A6C9F2A51E4DDCB600A067C8 /* Assets.xcassets */,
 				A6C9F2A71E4DDCB600A067C8 /* LaunchScreen.storyboard */,
@@ -209,8 +211,10 @@
 		A6C9F3891E53491700A067C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A6C9F2A01E4DDCB600A067C8 /* ViewController.swift */,
 				A6C9F38A1E53497E00A067C8 /* ProductOverviewCollectionViewCell.swift */,
 				A6C9F38B1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib */,
+				A6C9F3931E53627C00A067C8 /* ProductDetailViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -347,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C9F3951E53653100A067C8 /* testProductDetail.json in Resources */,
 				A6C9F2A91E4DDCB600A067C8 /* LaunchScreen.storyboard in Resources */,
 				A6C9F38E1E534C2400A067C8 /* testProducts.json in Resources */,
 				A6C9F38D1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib in Resources */,
@@ -521,6 +526,7 @@
 			files = (
 				A6C9F2D21E4DE19800A067C8 /* ProductOverview.swift in Sources */,
 				A6C9F2A11E4DDCB600A067C8 /* ViewController.swift in Sources */,
+				A6C9F3941E53627C00A067C8 /* ProductDetailViewController.swift in Sources */,
 				A6C9F3921E53527800A067C8 /* ProductDetail.swift in Sources */,
 				A6C9F3801E533BAE00A067C8 /* ProductOverviewJSONDecoder.swift in Sources */,
 				A6C9F29F1E4DDCB600A067C8 /* AppDelegate.swift in Sources */,

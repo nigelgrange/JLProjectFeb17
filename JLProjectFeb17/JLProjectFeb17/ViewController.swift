@@ -53,6 +53,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let product = products?[indexPath.row] {
+            performSegue(withIdentifier: "presentDetailView", sender: product)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        let navController = segue.destination as! UINavigationController
+        let productDetailView = navController.viewControllers.first as! ProductDetailViewController
+        productDetailView.productOverview = sender as! ProductOverview!
+    }
 
 }
 

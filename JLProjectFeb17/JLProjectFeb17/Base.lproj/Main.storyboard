@@ -56,11 +56,55 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="AzP-Jw-fwd" id="wGq-sf-Wj4"/>
+                        <segue destination="oVO-1U-HHI" kind="presentation" identifier="presentDetailView" id="9BF-sI-7q5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-356" y="30"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="lWg-dt-Kjh">
+            <objects>
+                <viewController id="tSI-Pf-4fl" customClass="ProductDetailViewController" customModule="JLProjectFeb17" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3f2-8P-M7J"/>
+                        <viewControllerLayoutGuide type="bottom" id="t7N-dg-xH1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XHa-Xx-uok">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OPJ-HE-RM5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="zYN-lB-ZVO">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="tSI-Pf-4fl" id="u6d-hb-DK2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sbw-Vy-UXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="30.134932533733135"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="prZ-xB-R4X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oVO-1U-HHI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sMp-vq-hSN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tSI-Pf-4fl" kind="relationship" relationship="rootViewController" id="Q1i-9o-1Sv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6A-3a-Z0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="30.134932533733135"/>
         </scene>
     </scenes>
 </document>
