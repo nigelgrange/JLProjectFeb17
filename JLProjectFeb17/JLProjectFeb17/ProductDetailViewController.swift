@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GONMarkupParser
 
 struct ProductTableViewConstants {
     static let SlideshowReuseIdentifier : String = "SlideshowCell"
@@ -27,6 +28,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
 
     var productOverview : ProductOverview!
     var productDetail : ProductDetail!
+    
+    var parsedProductDescription : NSAttributedString?
     
     @IBOutlet weak var sideView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -76,7 +79,8 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
 
     
     func presentDetailContent() {
-        
+        let parser = GONMarkupParser.default()
+        parsedProductDescription = parser?.attributedString(from: productDetail!.productInformation)
     }
 
     func sectionTypeForIndex(section: Int) -> ProductTableSectionType {
@@ -143,7 +147,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
             let textCell = cell as! ProductTextTableViewCell
             switch(indexPath.row) {
             case 0:
-                textCell.configureWithText(text: productDetail!.productInformation)
+                textCell.configureWithAttributedString(string: parsedProductDescription!)
             case 1:
                 textCell.configureWithText(text: "Product Code: "+productDetail!.productId)
             default:
@@ -185,9 +189,12 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         case .ProductTableSectionSlideshow:
             return 300.0
         case .ProductTableSectionPrice:
-            return 64.0
+            return 120.0
         case .ProductTableSectionText:
             if (indexPath.row == 0) {
+                if (parsedProductDescription != nil) {
+                    return (parsedProductDescription?.boundingRect(with: CGSize(width: self.tableView.frame.size.width - 16, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil).size.height)! + 120.0
+                }
                 return 128.0
             }
             return 44.0

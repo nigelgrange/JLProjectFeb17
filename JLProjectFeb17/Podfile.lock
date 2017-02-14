@@ -1,4 +1,6 @@
 PODS:
+  - GONMarkupParser (0.7.2):
+    - NSString+Color
   - Haneke (1.0.2)
   - ImageSlideshow (1.0.0):
     - ImageSlideshow/Core (= 1.0.0)
@@ -7,17 +9,21 @@ PODS:
     - ImageSlideshow/Core
     - Kingfisher (~> 3.0)
   - Kingfisher (3.3.3)
+  - NSString+Color (1.1.4)
 
 DEPENDENCIES:
+  - GONMarkupParser
   - Haneke
   - ImageSlideshow
   - ImageSlideshow/Kingfisher
 
 SPEC CHECKSUMS:
+  GONMarkupParser: fb4052cc4d7af41853552c704755b2bdc95fd205
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
   ImageSlideshow: 2787e10e202b79ecf5348a205c539fcc5bb8e62b
   Kingfisher: 893215a42e5c2164e916f69463c68003092b104c
+  NSString+Color: ea9e33d498d634adf56766c606c9128822094473
 
-PODFILE CHECKSUM: a495f24e3252d8e4d8b168a7d723abab5c1fe711
+PODFILE CHECKSUM: 356a3410fe5daee3e3f608f12e9d4c1bc33001b1
 
 COCOAPODS: 1.2.0

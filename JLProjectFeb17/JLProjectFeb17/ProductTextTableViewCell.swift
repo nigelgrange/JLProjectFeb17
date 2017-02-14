@@ -26,4 +26,7 @@ class ProductTextTableViewCell: UITableViewCell {
         productTextLabel.text = text
     }
     
+    func configureWithAttributedString(string: NSAttributedString) {
+        productTextLabel.attributedText = string
+    }
 }

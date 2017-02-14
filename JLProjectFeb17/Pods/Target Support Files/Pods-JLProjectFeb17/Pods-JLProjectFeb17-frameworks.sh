@@ -89,14 +89,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GONMarkupParser/GONMarkupParser.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Haneke/Haneke.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ImageSlideshow/ImageSlideshow.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NSString+Color/NSString_Color.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/GONMarkupParser/GONMarkupParser.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Haneke/Haneke.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ImageSlideshow/ImageSlideshow.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NSString+Color/NSString_Color.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
