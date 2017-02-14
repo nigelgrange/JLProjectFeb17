@@ -107,4 +107,26 @@ class JLProjectFeb17Tests: XCTestCase {
         }
     }
     
+    
+    func testJSONDecodeProductDetail() {
+        let testProductsResource = Bundle(for: type(of: self)).url(forResource: "testProductDetail", withExtension: "json")
+        do {
+            let staticData = try Data(contentsOf: testProductsResource!)
+            let productDetailDict = try JSONSerialization.jsonObject(with: staticData, options: []) as! [String:Any]
+            
+            let detail = ProductDetail(values: productDetailDict)
+            assert(detail?.productId == "1913470", "Invalid Product ID")
+            assert(detail?.priceNow == "499.00", "Invalid Price")
+            assert(detail?.title == "Bosch SMV53M40GB Fully Integrated Dishwasher", "Invalid Title")
+            assert((detail?.productInformation.characters.count)! > 0, "Invalid Product Information")
+            assert(detail?.specialOffer != nil && detail?.specialOffer?.characters.count == 0, "Invalid special offer")
+            assert((detail?.imageUrls.count)! > 0,"Invalid image urls")
+            assert((detail?.includedServices.count)! > 0, "Invalid Guarantee information")
+            assert((detail?.features.count)! > 0,"Invalid feature list")
+
+        } catch let error as NSError {
+            print("Error loading test resource: \(error)")
+        }
+    }
+    
 }

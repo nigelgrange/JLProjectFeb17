@@ -25,6 +25,8 @@
 		A6C9F38C1E53497E00A067C8 /* ProductOverviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9F38A1E53497E00A067C8 /* ProductOverviewCollectionViewCell.swift */; };
 		A6C9F38D1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F38B1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib */; };
 		A6C9F38E1E534C2400A067C8 /* testProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F2CD1E4DE05800A067C8 /* testProducts.json */; };
+		A6C9F3901E53525900A067C8 /* testProductDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F38F1E53525900A067C8 /* testProductDetail.json */; };
+		A6C9F3921E53527800A067C8 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9F3911E53527800A067C8 /* ProductDetail.swift */; };
 		CA5A07774CB08302F2865178 /* Pods_JLProjectFeb17.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB9CDA3162BA79EF73E79C /* Pods_JLProjectFeb17.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		A6C9F3871E5344A200A067C8 /* testProductsInvalid3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testProductsInvalid3.json; sourceTree = "<group>"; };
 		A6C9F38A1E53497E00A067C8 /* ProductOverviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductOverviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6C9F38B1E53497E00A067C8 /* ProductOverviewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductOverviewCollectionViewCell.xib; sourceTree = "<group>"; };
+		A6C9F38F1E53525900A067C8 /* testProductDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testProductDetail.json; sourceTree = "<group>"; };
+		A6C9F3911E53527800A067C8 /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		A75C26972BDAA790DDC89A87 /* Pods-JLProjectFeb17UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17UITests/Pods-JLProjectFeb17UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B320BB260EB99DFFB7A20204 /* Pods-JLProjectFeb17Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17Tests/Pods-JLProjectFeb17Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C912327055A4A49FA8DC4E68 /* Pods-JLProjectFeb17UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17UITests/Pods-JLProjectFeb17UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				A6C9F3811E53443900A067C8 /* testProductsInvalid1.json */,
 				A6C9F3851E53447000A067C8 /* testProductsInvalid2.json */,
 				A6C9F3871E5344A200A067C8 /* testProductsInvalid3.json */,
+				A6C9F38F1E53525900A067C8 /* testProductDetail.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			children = (
 				A6C9F2D11E4DE19800A067C8 /* ProductOverview.swift */,
 				A6C9F37F1E533BAE00A067C8 /* ProductOverviewJSONDecoder.swift */,
+				A6C9F3911E53527800A067C8 /* ProductDetail.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 				A6C9F3861E53447000A067C8 /* testProductsInvalid2.json in Resources */,
 				A6C9F3821E53443900A067C8 /* testProductsInvalid1.json in Resources */,
 				A6C9F3881E5344A200A067C8 /* testProductsInvalid3.json in Resources */,
+				A6C9F3901E53525900A067C8 /* testProductDetail.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +521,7 @@
 			files = (
 				A6C9F2D21E4DE19800A067C8 /* ProductOverview.swift in Sources */,
 				A6C9F2A11E4DDCB600A067C8 /* ViewController.swift in Sources */,
+				A6C9F3921E53527800A067C8 /* ProductDetail.swift in Sources */,
 				A6C9F3801E533BAE00A067C8 /* ProductOverviewJSONDecoder.swift in Sources */,
 				A6C9F29F1E4DDCB600A067C8 /* AppDelegate.swift in Sources */,
 				A6C9F38C1E53497E00A067C8 /* ProductOverviewCollectionViewCell.swift in Sources */,

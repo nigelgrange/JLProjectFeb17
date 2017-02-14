@@ -21,7 +21,6 @@ class ProductOverviewCollectionViewCell: UICollectionViewCell {
     
     func configureWithProductOverview(product : ProductOverview) {
         descriptionLabel.text = product.title+"\n£"+product.priceNow
-        print("Loading URL \(product.imageUrl)")
         image.hnk_setImage(from: URL(string: "https:"+product.imageUrl))
     }
 
