@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class SlideshowTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var slideshow: ImageSlideshow!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,20 @@ class SlideshowTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureWithImages(imageUrls:[String]) {
+        var imageSources = [InputSource]()
+        
+        for url in imageUrls {
+            imageSources.append(KingfisherSource(urlString:"https:"+url)!)
+        }
+        
+        slideshow.pageControlPosition = PageControlPosition.underScrollView
+        slideshow.pageControl.currentPageIndicatorTintColor = UIColor.lightGray;
+        slideshow.pageControl.pageIndicatorTintColor = UIColor.black;
+        slideshow.contentScaleMode = UIViewContentMode.scaleAspectFit
+        slideshow.setImageInputs(imageSources)
     }
     
 }

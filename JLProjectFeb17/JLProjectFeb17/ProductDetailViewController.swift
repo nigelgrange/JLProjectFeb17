@@ -136,6 +136,9 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         switch (sectionType) {
             
+        case .ProductTableSectionSlideshow:
+            let slideshowCell = cell as! SlideshowTableViewCell
+            slideshowCell.configureWithImages(imageUrls: productDetail!.imageUrls)
         case .ProductTableSectionText:
             let textCell = cell as! ProductTextTableViewCell
             switch(indexPath.row) {

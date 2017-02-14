@@ -8,6 +8,8 @@ target 'JLProjectFeb17' do
   # Pods for JLProjectFeb17
 
 pod 'Haneke'
+pod 'ImageSlideshow'
+pod 'ImageSlideshow/Kingfisher'
 
   target 'JLProjectFeb17Tests' do
     inherit! :search_paths

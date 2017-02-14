@@ -1,12 +1,23 @@
 PODS:
   - Haneke (1.0.2)
+  - ImageSlideshow (1.0.0):
+    - ImageSlideshow/Core (= 1.0.0)
+  - ImageSlideshow/Core (1.0.0)
+  - ImageSlideshow/Kingfisher (1.0.0):
+    - ImageSlideshow/Core
+    - Kingfisher (~> 3.0)
+  - Kingfisher (3.3.3)
 
 DEPENDENCIES:
   - Haneke
+  - ImageSlideshow
+  - ImageSlideshow/Kingfisher
 
 SPEC CHECKSUMS:
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
+  ImageSlideshow: 2787e10e202b79ecf5348a205c539fcc5bb8e62b
+  Kingfisher: 893215a42e5c2164e916f69463c68003092b104c
 
-PODFILE CHECKSUM: ef7c9353d8bf6884eda0b7cacefe671a49b02be2
+PODFILE CHECKSUM: a495f24e3252d8e4d8b168a7d723abab5c1fe711
 
 COCOAPODS: 1.2.0
