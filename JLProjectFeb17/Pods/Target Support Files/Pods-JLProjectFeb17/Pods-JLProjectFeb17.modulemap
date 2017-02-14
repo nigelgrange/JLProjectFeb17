@@ -1,0 +1,6 @@
+framework module Pods_JLProjectFeb17 {
+  umbrella header "Pods-JLProjectFeb17-umbrella.h"
+
+  export *
+  module * { export * }
+}
