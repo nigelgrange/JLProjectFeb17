@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AzP-Jw-fwd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Ipy-x9-6o0">
                                     <size key="itemSize" width="255" height="255"/>
@@ -32,7 +33,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aak-dc-Noq" customClass="ProductOverviewCollectionViewCell" customModule="JLProjectFeb17" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="0.0" width="255" height="255"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
@@ -72,9 +73,35 @@
                         <viewControllerLayoutGuide type="bottom" id="t7N-dg-xH1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XHa-Xx-uok">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VCQ-GA-Fc1">
+                                <rect key="frame" x="0.0" y="0.0" width="598" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tSI-Pf-4fl" id="dea-Wp-D0w"/>
+                                    <outlet property="delegate" destination="tSI-Pf-4fl" id="4Ms-aV-Nyz"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hag-Ht-QMn">
+                                <rect key="frame" x="598" y="0.0" width="426" height="768"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hag-Ht-QMn" secondAttribute="height" multiplier="71:128" id="0MN-Sc-o4X"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hag-Ht-QMn" firstAttribute="leading" secondItem="VCQ-GA-Fc1" secondAttribute="trailing" id="AzG-A3-SCy"/>
+                            <constraint firstItem="VCQ-GA-Fc1" firstAttribute="leading" secondItem="XHa-Xx-uok" secondAttribute="leading" id="N3U-Hj-urD"/>
+                            <constraint firstAttribute="trailing" secondItem="hag-Ht-QMn" secondAttribute="trailing" id="Xkd-Cl-j6y"/>
+                            <constraint firstItem="hag-Ht-QMn" firstAttribute="top" secondItem="XHa-Xx-uok" secondAttribute="top" id="iuJ-1i-XmH"/>
+                            <constraint firstItem="VCQ-GA-Fc1" firstAttribute="top" secondItem="XHa-Xx-uok" secondAttribute="top" id="noE-aD-n8H"/>
+                            <constraint firstItem="t7N-dg-xH1" firstAttribute="top" secondItem="VCQ-GA-Fc1" secondAttribute="bottom" id="p2u-VZ-m7O"/>
+                            <constraint firstItem="t7N-dg-xH1" firstAttribute="top" secondItem="hag-Ht-QMn" secondAttribute="bottom" id="sWp-Dc-pVp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OPJ-HE-RM5">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="zYN-lB-ZVO">
@@ -83,10 +110,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sideView" destination="hag-Ht-QMn" id="oIu-9I-7UD"/>
+                        <outlet property="tableView" destination="VCQ-GA-Fc1" id="DlO-49-fdV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbw-Vy-UXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="30.134932533733135"/>
+            <point key="canvasLocation" x="1643.5546875" y="29.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="prZ-xB-R4X">
