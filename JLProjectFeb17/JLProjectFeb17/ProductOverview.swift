@@ -16,7 +16,7 @@ class ProductOverview: NSObject {
     
     init?(values : Dictionary<String, Any>) {
         let productId = values["productId"] as? String
-        let priceDict  =  values["price"] as? Dictionary<String, Any>
+        let priceDict  =  values["price"] as? [String : Any]
         let priceNowString = priceDict != nil ? priceDict?["now"] as? String : nil
         let title = values["title"] as? String
         let imageUrl = values["image"] as? String

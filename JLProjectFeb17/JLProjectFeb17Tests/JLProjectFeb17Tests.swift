@@ -54,7 +54,57 @@ class JLProjectFeb17Tests: XCTestCase {
         assert(ProductOverview(values:invalidDictionary) == nil, "Invalid overview object")
     }
     
-    
 
+    func testJSONDecodeValidData() {
+        let testProductsResource = Bundle(for: type(of: self)).url(forResource: "testProducts", withExtension: "json")
+        do {
+        let staticData = try Data(contentsOf: testProductsResource!)
+            let decoder = ProductOverviewJSONDecoder();
+            let productOverviewList = decoder.decodeJSON(json: staticData)
+            print("Decoded \(productOverviewList.count) products")
+            assert(productOverviewList.count == 20, "Error: Invalid number of products decoded")
+        } catch let error as NSError {
+            print("Error loading test resource: \(error)")
+        }
+    }
+
+    func testJSONDecodeNonJSONData() {
+        let testProductsResource = Bundle(for: type(of: self)).url(forResource: "testProductsInvalid1", withExtension: "json")
+        do {
+            let staticData = try Data(contentsOf: testProductsResource!)
+            let decoder = ProductOverviewJSONDecoder();
+            let productOverviewList = decoder.decodeJSON(json: staticData)
+            print("Decoded \(productOverviewList.count) products")
+            assert(productOverviewList.count == 0, "Error: Invalid number of products decoded")
+        } catch let error as NSError {
+            print("Error loading test resource: \(error)")
+        }
+    }
+    
+    func testJSONDecodeNoProductsJSONData() {
+        let testProductsResource = Bundle(for: type(of: self)).url(forResource: "testProductsInvalid2", withExtension: "json")
+        do {
+            let staticData = try Data(contentsOf: testProductsResource!)
+            let decoder = ProductOverviewJSONDecoder();
+            let productOverviewList = decoder.decodeJSON(json: staticData)
+            print("Decoded \(productOverviewList.count) products")
+            assert(productOverviewList.count == 0, "Error: Invalid number of products decoded")
+        } catch let error as NSError {
+            print("Error loading test resource: \(error)")
+        }
+    }
+    
+    func testJSONDecodeInvalidProductsJSONData() {
+        let testProductsResource = Bundle(for: type(of: self)).url(forResource: "testProductsInvalid3", withExtension: "json")
+        do {
+            let staticData = try Data(contentsOf: testProductsResource!)
+            let decoder = ProductOverviewJSONDecoder();
+            let productOverviewList = decoder.decodeJSON(json: staticData)
+            print("Decoded \(productOverviewList.count) products")
+            assert(productOverviewList.count == 0, "Error: Invalid number of products decoded")
+        } catch let error as NSError {
+            print("Error loading test resource: \(error)")
+        }
+    }
     
 }
