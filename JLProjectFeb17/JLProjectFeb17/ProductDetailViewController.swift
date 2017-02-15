@@ -143,6 +143,9 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         case .ProductTableSectionSlideshow:
             let slideshowCell = cell as! SlideshowTableViewCell
             slideshowCell.configureWithImages(imageUrls: productDetail!.imageUrls)
+        case .ProductTableSectionPrice:
+            let priceCell = cell as! ProductDetailPriceAndGuaranteeTableViewCell
+            priceCell.configureWithProduct(productDetail: productDetail!)
         case .ProductTableSectionText:
             let textCell = cell as! ProductTextTableViewCell
             switch(indexPath.row) {
@@ -158,8 +161,6 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
                 let featureCell = cell as! ProductFeatureTableViewCell
                 let features = productDetail!.features
                 featureCell.configureWithFeature(values: features[indexPath.row])
-        default:
-            print("Noop")
         }
         
         return cell!
@@ -178,6 +179,7 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         label.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title3)
+        label.backgroundColor = UIColor.white
         return label
         
         

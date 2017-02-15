@@ -12,13 +12,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProductDetailPriceAndGuaranteeTableViewCell" customModule="JLProjectFeb17" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dly-9l-jYb">
+                        <rect key="frame" x="8" y="0.0" width="304" height="79"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="dly-9l-jYb" secondAttribute="bottom" id="13x-eA-WCa"/>
+                    <constraint firstItem="dly-9l-jYb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Fde-mI-Gau"/>
+                    <constraint firstAttribute="trailing" secondItem="dly-9l-jYb" secondAttribute="trailing" constant="8" id="Qcv-dV-zBt"/>
+                    <constraint firstItem="dly-9l-jYb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="sl6-0R-TDv"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="priceLabel" destination="dly-9l-jYb" id="LXy-Ez-uSx"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
