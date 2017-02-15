@@ -22,3 +22,5 @@ Third-party components:
 Known issues:
 - Text does not word-wrap correctly in the Price / Guarantee cell. It should be possible to fix this by adding the correct paragraph wrpaping attributes to the string.
 
+Timescales:
+- The majority of the project was completed on February 14th, with a few some interruptions, and completed on the February 15th. Total time spent on the project is esimated to be 5 hours.
