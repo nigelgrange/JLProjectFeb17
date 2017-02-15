@@ -8,6 +8,7 @@
 
 import UIKit
 import Haneke
+import GONMarkupParser
 
 class ProductOverviewCollectionViewCell: UICollectionViewCell {
 
@@ -20,7 +21,9 @@ class ProductOverviewCollectionViewCell: UICollectionViewCell {
     }
     
     func configureWithProductOverview(product : ProductOverview) {
-        descriptionLabel.text = product.title+"\n£"+product.priceNow
+        let parser = GONMarkupParser.default()
+        let markup = product.title+"\n<b>£"+product.priceNow+"</>"
+        descriptionLabel.attributedText = parser?.attributedString(from: markup)
         image.hnk_setImage(from: URL(string: "https:"+product.imageUrl))
     }
 

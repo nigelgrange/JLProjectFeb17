@@ -74,6 +74,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let productDetailView = navController.viewControllers.first as! ProductDetailViewController
         productDetailView.productOverview = sender as! ProductOverview!
     }
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
 

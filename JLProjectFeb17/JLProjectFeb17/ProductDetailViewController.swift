@@ -125,4 +125,9 @@ class ProductDetailViewController: UIViewController {
         }
         
     }
+    
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
