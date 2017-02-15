@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'JLProjectFeb17' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for JLProjectFeb17
+
+pod 'Haneke'
+pod 'ImageSlideshow'
+pod 'ImageSlideshow/Kingfisher'
+pod 'GONMarkupParser'
+
+  target 'JLProjectFeb17Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'JLProjectFeb17UITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
