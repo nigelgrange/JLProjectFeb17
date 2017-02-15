@@ -10,7 +10,7 @@ import UIKit
 import GONMarkupParser
 
 struct ProductDetailLayout {
-    static let ProductDetailSideViewWidth : CGFloat = 320.0
+    static let ProductDetailSideViewWidth : CGFloat = 380.0
 }
 
 class ProductDetailViewController: UIViewController {
@@ -36,7 +36,6 @@ class ProductDetailViewController: UIViewController {
         if (productOverview != nil) {
             self.navigationItem.title = productOverview.title
             loadContent()
-            presentDetailContent()
         }
     }
     
@@ -62,16 +61,21 @@ class ProductDetailViewController: UIViewController {
     }
     
     func loadContent() {
-        let testProductsResource = Bundle(for: type(of: self)).url(forResource: "testProductDetail", withExtension: "json")
-        do {
-            let staticData = try Data(contentsOf: testProductsResource!)
-            let productDetailDict = try JSONSerialization.jsonObject(with: staticData, options: []) as! [String:Any]
-            
-            productDetail = ProductDetail(values: productDetailDict)
-            
-        } catch let error as NSError {
-            print("Error loading test resource: \(error)")
+        
+        let api = ProductAPI()
+        api.retrieveProductDetail(productID: productOverview.productId, success: { (productDetail : ProductDetail?) in
+            self.productDetail = productDetail
+            DispatchQueue.main.async {
+                self.presentDetailContent();
+            }
+        }) { (error : Error?) in
+            DispatchQueue.main.async(execute: {
+                let alert = UIAlertController.init(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(self, animated: true, completion: nil)
+            })
         }
+
     }
     
     func sectionsForOrientation(isLandscape : Bool) -> [ProductTableSectionType] {
@@ -106,6 +110,7 @@ class ProductDetailViewController: UIViewController {
         sideTableView.delegate = sideTableDataSource
         
         tableView.reloadData()
+        sideTableView.reloadData()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -114,7 +119,9 @@ class ProductDetailViewController: UIViewController {
         coordinator.animate(alongsideTransition: { (context) in
             self.view.layoutIfNeeded()
         }) { (context) in
-            self.presentDetailContent()
+            if (self.productDetail != nil) {
+                self.presentDetailContent()
+            }
         }
         
     }

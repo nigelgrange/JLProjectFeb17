@@ -30,14 +30,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
     func loadProductOverview() {
-        let testProductsResource = Bundle(for: type(of: self)).url(forResource: "testProducts", withExtension: "json")
-        do {
-            let staticData = try Data(contentsOf: testProductsResource!)
-            let decoder = ProductOverviewJSONDecoder();
-            products = decoder.decodeJSON(json: staticData)
-            print("Decoded \(self.products?.count) products")
-        } catch let error as NSError {
-            print("Error loading test resource: \(error)")
+                
+        let api = ProductAPI();
+        api.retrieveProductOverview(success: { (products : [ProductOverview]) in
+            self.products = products
+            
+            DispatchQueue.main.async(execute: {
+                self.collectionView.reloadData()
+            })
+            
+        }) { (error : Error?) in
+            DispatchQueue.main.async(execute: {
+                let alert = UIAlertController.init(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(self, animated: true, completion: nil)
+            })
         }
     }
     
