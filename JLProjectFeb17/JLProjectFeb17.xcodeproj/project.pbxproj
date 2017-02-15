@@ -37,6 +37,7 @@
 		A6C9F3A31E53A86500A067C8 /* ProductTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F3A11E53A86500A067C8 /* ProductTextTableViewCell.xib */; };
 		A6C9F3A61E53A90A00A067C8 /* ProductFeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9F3A41E53A90A00A067C8 /* ProductFeatureTableViewCell.swift */; };
 		A6C9F3A71E53A90A00A067C8 /* ProductFeatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C9F3A51E53A90A00A067C8 /* ProductFeatureTableViewCell.xib */; };
+		A6C9F3A91E54453800A067C8 /* ProductDetailTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9F3A81E54453800A067C8 /* ProductDetailTableDataSource.swift */; };
 		CA5A07774CB08302F2865178 /* Pods_JLProjectFeb17.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFB9CDA3162BA79EF73E79C /* Pods_JLProjectFeb17.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		A6C9F3A11E53A86500A067C8 /* ProductTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTextTableViewCell.xib; sourceTree = "<group>"; };
 		A6C9F3A41E53A90A00A067C8 /* ProductFeatureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductFeatureTableViewCell.swift; sourceTree = "<group>"; };
 		A6C9F3A51E53A90A00A067C8 /* ProductFeatureTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductFeatureTableViewCell.xib; sourceTree = "<group>"; };
+		A6C9F3A81E54453800A067C8 /* ProductDetailTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailTableDataSource.swift; sourceTree = "<group>"; };
 		A75C26972BDAA790DDC89A87 /* Pods-JLProjectFeb17UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17UITests/Pods-JLProjectFeb17UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B320BB260EB99DFFB7A20204 /* Pods-JLProjectFeb17Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17Tests/Pods-JLProjectFeb17Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C912327055A4A49FA8DC4E68 /* Pods-JLProjectFeb17UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLProjectFeb17UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLProjectFeb17UITests/Pods-JLProjectFeb17UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,7 +248,16 @@
 		A6C9F3971E53A3D700A067C8 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				A6C9F3AA1E54454200A067C8 /* Cells */,
 				A6C9F3931E53627C00A067C8 /* ProductDetailViewController.swift */,
+				A6C9F3A81E54453800A067C8 /* ProductDetailTableDataSource.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		A6C9F3AA1E54454200A067C8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
 				A6C9F3981E53A64A00A067C8 /* SlideshowTableViewCell.swift */,
 				A6C9F3991E53A64A00A067C8 /* SlideshowTableViewCell.xib */,
 				A6C9F39C1E53A79100A067C8 /* ProductDetailPriceAndGuaranteeTableViewCell.swift */,
@@ -256,7 +267,7 @@
 				A6C9F3A41E53A90A00A067C8 /* ProductFeatureTableViewCell.swift */,
 				A6C9F3A51E53A90A00A067C8 /* ProductFeatureTableViewCell.xib */,
 			);
-			name = Detail;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		ECB6C88B69143D8E9DE987C6 /* Pods */ = {
@@ -568,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C9F3A91E54453800A067C8 /* ProductDetailTableDataSource.swift in Sources */,
 				A6C9F2D21E4DE19800A067C8 /* ProductOverview.swift in Sources */,
 				A6C9F2A11E4DDCB600A067C8 /* ViewController.swift in Sources */,
 				A6C9F3941E53627C00A067C8 /* ProductDetailViewController.swift in Sources */,
