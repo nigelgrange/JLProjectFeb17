@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -77,25 +76,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VCQ-GA-Fc1">
-                                <rect key="frame" x="0.0" y="0.0" width="598" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hag-Ht-QMn">
-                                <rect key="frame" x="598" y="0.0" width="426" height="768"/>
+                                <rect key="frame" x="704" y="0.0" width="320" height="768"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t0C-ua-C2A">
-                                        <rect key="frame" x="0.0" y="64" width="426" height="704"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="704"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hag-Ht-QMn" secondAttribute="height" multiplier="71:128" id="0MN-Sc-o4X"/>
                                     <constraint firstItem="t0C-ua-C2A" firstAttribute="top" secondItem="hag-Ht-QMn" secondAttribute="top" constant="64" id="9TF-rH-0en"/>
                                     <constraint firstAttribute="bottom" secondItem="t0C-ua-C2A" secondAttribute="bottom" id="A2M-4C-cLy"/>
+                                    <constraint firstAttribute="width" constant="320" id="AKh-ZY-sPm">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="320"/>
+                                    </constraint>
                                     <constraint firstItem="t0C-ua-C2A" firstAttribute="leading" secondItem="hag-Ht-QMn" secondAttribute="leading" id="UdK-a1-YZJ"/>
                                     <constraint firstAttribute="trailing" secondItem="t0C-ua-C2A" secondAttribute="trailing" id="ehT-GK-sum"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AKh-ZY-sPm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="AKh-ZY-sPm"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,6 +130,7 @@
                     <connections>
                         <outlet property="sideTableView" destination="t0C-ua-C2A" id="xnj-Ot-18O"/>
                         <outlet property="sideView" destination="hag-Ht-QMn" id="oIu-9I-7UD"/>
+                        <outlet property="sideViewWidthConstraint" destination="AKh-ZY-sPm" id="5lX-H5-mus"/>
                         <outlet property="tableView" destination="VCQ-GA-Fc1" id="DlO-49-fdV"/>
                     </connections>
                 </viewController>

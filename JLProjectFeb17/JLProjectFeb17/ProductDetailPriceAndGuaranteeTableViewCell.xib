@@ -28,8 +28,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="dly-9l-jYb" secondAttribute="bottom" id="13x-eA-WCa"/>
                     <constraint firstItem="dly-9l-jYb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Fde-mI-Gau"/>
-                    <constraint firstAttribute="trailing" secondItem="dly-9l-jYb" secondAttribute="trailing" constant="8" id="Qcv-dV-zBt"/>
-                    <constraint firstItem="dly-9l-jYb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="sl6-0R-TDv"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dly-9l-jYb" secondAttribute="trailing" constant="8" id="Qcv-dV-zBt"/>
+                    <constraint firstItem="dly-9l-jYb" firstAttribute="leading" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="sl6-0R-TDv"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

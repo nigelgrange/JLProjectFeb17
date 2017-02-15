@@ -139,7 +139,7 @@ class ProductDetailTableDataSource: NSObject, UITableViewDelegate, UITableViewDa
             return 120.0
         case .ProductTableSectionText:
             if (indexPath.row == 0) {
-                return productDescriptionBounds.width
+                return productDescriptionBounds.height + 128.0
             } else {
                 return 44.0
             }

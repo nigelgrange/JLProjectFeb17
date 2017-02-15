@@ -9,6 +9,9 @@
 import UIKit
 import GONMarkupParser
 
+struct ProductDetailLayout {
+    static let ProductDetailSideViewWidth : CGFloat = 320.0
+}
 
 class ProductDetailViewController: UIViewController {
 
@@ -20,6 +23,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var sideView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sideTableView: UITableView!
+    @IBOutlet weak var sideViewWidthConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -36,6 +40,11 @@ class ProductDetailViewController: UIViewController {
         }
     }
     
+
+    override func viewDidLayoutSubviews() {
+        sideViewWidthConstraint.constant = view.bounds.size.width > view.bounds.size.height ? ProductDetailLayout.ProductDetailSideViewWidth : 0.0
+    }
+
     func registerCells(tableView: UITableView) {
         tableView.register(UINib.init(nibName: "SlideshowTableViewCell", bundle: nil), forCellReuseIdentifier: ProductTableViewConstants.SlideshowReuseIdentifier)
         tableView.register(UINib.init(nibName: "ProductDetailPriceAndGuaranteeTableViewCell", bundle: nil), forCellReuseIdentifier: ProductTableViewConstants.ProductPriceReuseIdentifier)
@@ -65,14 +74,23 @@ class ProductDetailViewController: UIViewController {
         }
     }
     
+    func sectionsForOrientation(isLandscape : Bool) -> [ProductTableSectionType] {
+        if (isLandscape) {
+            return [ProductTableSectionType.ProductTableSectionSlideshow,
+                    ProductTableSectionType.ProductTableSectionText,
+                    ProductTableSectionType.ProductTableSectionFeature]
+        } else {
+            return [ProductTableSectionType.ProductTableSectionSlideshow,
+             ProductTableSectionType.ProductTableSectionPrice,
+             ProductTableSectionType.ProductTableSectionText,
+             ProductTableSectionType.ProductTableSectionFeature]
+        }
+    }
+    
     func presentDetailContent() {
-        tableDataSource = ProductDetailTableDataSource(productDetail: productDetail, sections:[ProductTableSectionType.ProductTableSectionSlideshow,
-                                                                                               ProductTableSectionType.ProductTableSectionPrice,
-                                                                                               ProductTableSectionType.ProductTableSectionText,
-                                                                                               ProductTableSectionType.ProductTableSectionFeature])
+        tableDataSource = ProductDetailTableDataSource(productDetail: productDetail, sections:sectionsForOrientation(isLandscape: view.bounds.size.width > view.bounds.size.height))
         
         sideTableDataSource = ProductDetailTableDataSource(productDetail: productDetail, sections:[ProductTableSectionType.ProductTableSectionPrice])
-        
         
         let parser = GONMarkupParser.default()
         let parsedDescription = parser?.attributedString(from: productDetail!.productInformation)
@@ -86,8 +104,18 @@ class ProductDetailViewController: UIViewController {
         
         sideTableView.dataSource = sideTableDataSource
         sideTableView.delegate = sideTableDataSource
+        
+        tableView.reloadData()
     }
 
-
-
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            self.view.layoutIfNeeded()
+        }) { (context) in
+            self.presentDetailContent()
+        }
+        
+    }
 }
